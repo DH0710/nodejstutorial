@@ -3,7 +3,7 @@
 // @access public 
 
 
-const getContacts = (req, res) => {
+const getContacts = async (req, res) => {
     res.status(200).json ({message: "Get all contacts"});
 };
 
@@ -13,7 +13,7 @@ const getContacts = (req, res) => {
 // @access public 
 
 
-const getSingleContact = (req, res) => {
+const getSingleContact = async (req, res) => {
     res.status(200).json ({message: `Get Contact for ${req.params.id}`});
 };
 
@@ -22,7 +22,7 @@ const getSingleContact = (req, res) => {
 // @route POST /api/contacts
 // @access public
 
-const createContact = (req, res) => {
+const createContact = async (req, res) => {
     console.log("The request body is :", req.body);
     const {name, email, phone} = req.body;
     if (!name || !email || !phone ) {
@@ -37,7 +37,7 @@ const createContact = (req, res) => {
 // @route PUT /api/contacts/:id
 // @access public
 
-const updateContact = (req, res) => {
+const updateContact = async (req, res) => {
     res.status(200).json ({message: `Update Contact for ${req.params.id}`});
 };
 
@@ -45,7 +45,7 @@ const updateContact = (req, res) => {
 // @route DELETE /api/contacts/:id
 // @access public
 
-const deleteContact = (req, res) => {
+const deleteContact = async (req, res) => {
     res.status(200).json ({message: `Delete Contact for ${req.params.id}`});
 };
 
