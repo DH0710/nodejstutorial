@@ -6,7 +6,7 @@ const asyncHandler = require("express-async-handler");
 // @access public 
 
 
-const getContacts = asyncHanlder (async (req, res) => {
+const getContacts = asyncHandler (async (req, res) => {
     res.status(200).json ({message: "Get all contacts"});
 });
 

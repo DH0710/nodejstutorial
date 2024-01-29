@@ -1,7 +1,13 @@
 const express = require("express");
+const connectDB = require("./config/dbConnection");
 const errorHandler = require("./middleware/errorHandler");
-const app = express();
 const dotenv = require("dotenv").config();
+
+
+connectDB();
+const app = express();
+
+
 
 const port = process.env.PORT || 8000;
 
@@ -12,4 +18,6 @@ app.use(errorHandler);
 app.listen (port , () => {
     console.log(`Server is now listening on port ${port}`)
 });
+
+
 
