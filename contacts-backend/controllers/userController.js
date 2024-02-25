@@ -56,7 +56,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
     // find out if this user exists already in the database
 
-    const user = await User.findOne({ email, username });
+    const user = await User.findOne({ email});
     // compare password with hashedpassword
 
     if (user && (await bcrypt.compare(password, user.password))) {
@@ -76,8 +76,6 @@ const loginUser = asyncHandler(async (req, res) => {
         throw new Error ("email or password is not valid!")
 
     }
-
-    res.json({ message: "Login the user"})
 });
 
 
